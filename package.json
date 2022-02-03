@@ -1,0 +1,19 @@
+{
+  "name": "dev-store",
+  "version": "1.0.0",
+  "description": "Kreiranje bootcamp trgovine",
+  "main": "server.js",
+  "scripts": {
+    "start" : "node server",
+    "dev" : "nodemon server"
+  },
+  "author": "stepski011",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
