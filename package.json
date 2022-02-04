@@ -4,16 +4,21 @@
   "description": "Kreiranje bootcamp trgovine",
   "main": "server.js",
   "scripts": {
-    "start" : "node server",
-    "dev" : "nodemon server"
+    "start": "node server",
+    "dev": "nodemon server"
   },
   "author": "stepski011",
   "license": "ISC",
   "dependencies": {
+    "colors": "^1.4.0",
     "dotenv": "^16.0.0",
-    "express": "^4.17.2"
+    "electron-releases": "^3.942.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.2.0",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "electron-packager": "^15.4.0",
     "nodemon": "^2.0.15"
   }
 }
