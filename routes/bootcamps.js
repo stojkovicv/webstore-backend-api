@@ -7,6 +7,7 @@ const {
     createBootcamp,
     updateBootcamp,
     deleteBootcamp
+    
 } = require('../controllers/bootcamps');
 
 

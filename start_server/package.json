@@ -1,0 +1,15 @@
+{
+  "name": "vuk",
+  "version": "1.0.0",
+  "description": "Vezba",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "stepski011",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
