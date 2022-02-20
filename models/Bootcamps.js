@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const DevstoreSchema = new mongoose.Schema({
     name:{
         type: String,
-        require:[true, 'Add the name'],
+        required:[true, 'Please add the name'],
         unique: true,
         trim: true,
         maxlength:[50, 'Name cannot be more than 50 chars']
@@ -13,7 +13,7 @@ const DevstoreSchema = new mongoose.Schema({
     slug:String,
     description:{
         type: String,
-        require:[true, 'Add description'],
+        required:[true, 'Please add description'],
         maxlength:[500, 'Description lenght is 500 chars']
     },
 
