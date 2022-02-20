@@ -36,7 +36,7 @@ const server = app.listen(
 
 //Prekid rada ako nije povezano sa bazom
 process.on('unhandledRejection', (err, promise) =>{
-    console.log(`Greska: ${err.message}`.red);
+    console.log(`Greska!: ${err.message}`.red);
     //Zatvoriti sve ako se dogodi
     server.close(() => process.exit(1));
 })
