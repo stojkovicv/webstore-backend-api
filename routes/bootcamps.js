@@ -21,5 +21,5 @@ router.route('/:id')
     .put(updateBootcamp)
     .delete(deleteBootcamp);
 
-// Export rutera
+// Export
 module.exports = router;

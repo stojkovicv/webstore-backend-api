@@ -15,7 +15,8 @@
     "electron-releases": "^3.942.0",
     "express": "^4.17.2",
     "mongoose": "^6.2.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "slugify": "^1.6.5"
   },
   "devDependencies": {
     "electron-packager": "^15.4.0",
