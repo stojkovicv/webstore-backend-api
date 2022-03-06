@@ -50,15 +50,7 @@ const CourseSchema = new mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     ref: 'Bootcamp',
     required: true
-  },
-
-
-  user: {
-    type: mongoose.Schema.ObjectId,
-    ref: 'User',
-    required: true
-  }
-  
+  }  
 });
 
 module.exports = mongoose.model('Course', CourseSchema);

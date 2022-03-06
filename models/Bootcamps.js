@@ -102,6 +102,9 @@ const DevstoreSchema = new mongoose.Schema({
         default: Date.now
       }
 
+}, {
+  toJSON: { virtuals: true },
+  toObject: { virtuals: true }
 });
 
 //Slugs
@@ -125,8 +128,21 @@ DevstoreSchema.pre('save', async function(next){
   }
   this.address = undefined;
   next();
-})
+});
 
+//Cascade delete courses with his bootcamp
+DevstoreSchema.pre('remove', async function (next){
+  await this.model('Course').deleteMany({ bootcamp: this._id });
+  next();
+});
+
+// Populate courses by bootcamp
+DevstoreSchema.virtual('courses', {
+  ref: 'Course',
+  localField: '_id',
+  foreignField: 'bootcamp', 
+  justOne: false
+});
 
 
 module.exports = mongoose.model('Bootcamp', DevstoreSchema)
