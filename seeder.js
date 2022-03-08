@@ -17,7 +17,7 @@ const bootcamps = JSON.parse(fs.readFileSync(`${__dirname}/_data/bootcamps.json`
 const courses = JSON.parse(fs.readFileSync(`${__dirname}/_data/courses.json`, 'utf-8'));
 
 
-// Data to DB
+// Import
 const importData = async () => {
     try {
         await Bootcamp.create(bootcamps);
