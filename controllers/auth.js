@@ -4,9 +4,9 @@ const User = require('../models/User');
 const { send } = require('express/lib/response');
 
 // @desc      Register user
-// @route     POST /api/v1/auth/register
+// @route     POST /api/v1/auth/registrejsn
 // @access    Public
-exports.registracija = asyncHandler(async (req, res, next) => {
+exports.registrejsn = asyncHandler(async (req, res, next) => {
   const { name, email, password, role } = req.body;
 
   // Create user
@@ -14,7 +14,7 @@ exports.registracija = asyncHandler(async (req, res, next) => {
     name,
     email,
     password,
-    role,
+    role
   });
 
   sendTokenResponse(user, 200, res);
