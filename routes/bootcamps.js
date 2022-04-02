@@ -14,11 +14,14 @@ const {
 
 const Bootcamp = require('../models/Bootcamps');
 const advancedResults = require('../middleware/advancedResults');
+const reviweRouter = require('./reviews');
 
 const courseRouter = require('./courses');
 
 // Reroute into other resource routers
 router.use('/:bootcampId/courses', courseRouter);
+router.use('/:bootcampId/reviews', reviweRouter);
+
 
 router.route('/radius/:zipcode/:distance').get(getBootcampsInRadius);
 
