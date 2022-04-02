@@ -53,6 +53,45 @@ exports.login = asyncHandler(async (req, res, next) => {
     .json({success:true, token});   
 });
 
+// @desc      Get current logged in user
+// @route     POST /api/v1/auth/me
+// @access    Private
+
+exports.getMe = asyncHandler(async (req, res, next) =>{
+  const user = await User.findById(req.user.id);
+
+  res.status(200).json({
+    success:true,
+    data: user
+  });
+  
+})
+
+// @desc      Forgot password
+// @route     POST /api/v1/auth/fortogpassword
+// @access    Public
+
+exports.forgotPassword = asyncHandler(async (req, res, next) =>{
+  const user = await User.findOne({email:req.body.email});
+
+  if(!user){
+    return next(new ErrorResponse('No user with this email!', 404));
+  }
+
+  // Get reset token
+  const resetToken = user.getResetPasswordToken();
+
+  // Save user who wants to change password
+  await user.save({validateBeforeSave: false});
+
+  res.status(200).json({
+    success:true,
+    data: user
+  });
+  
+})
+
+
 // Tokenizacija i cookie
 const sendTokenResponse = (user, statusCode, res) => {
   const token = user.getSignedJwtToken();
@@ -75,17 +114,3 @@ const sendTokenResponse = (user, statusCode, res) => {
       token
     });
 }
-
-// @desc      Get current logged in user
-// @route     POST /api/v1/auth/me
-// @access    Private
-
-exports.getMe = asyncHandler(async (req, res, next) =>{
-  const user = await User.findById(req.user.id);
-
-  res.status(200).json({
-    success:true,
-    data: user
-  });
-  
-})
