@@ -4,7 +4,7 @@
 > 
 ## Usage
 
-Remvove one .env exstension from "config/config.env.env" and set the values.
+Remove one .env exstension from "config/config.env.env" and set the values.
 
 ## Install dependencies
 
