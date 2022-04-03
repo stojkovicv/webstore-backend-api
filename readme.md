@@ -34,5 +34,9 @@ node seeder -d
 node seeder -i
 ```
 
+## Documentation
+
+Enable index.html file and locate it in "./public" folder, for requests documented with Postman.
+
 - Version: 1.0.0
 - Author: Vuk Stojkovic & Traversy Media
