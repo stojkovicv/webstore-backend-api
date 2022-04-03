@@ -17,8 +17,22 @@ npm install
 ```
 # Run in dev mode
 npm run dev
-# Run in production mode
+
+# Run in prod mode
 npm start
 ```
 
-- Version 1.0.0
+## Database Seeder
+
+To seed the database with users, bootcamps, courses and reviews with data from the "\_data" folder, run
+
+```
+# Remove all data
+node seeder -d
+
+# Import all data
+node seeder -i
+```
+
+- Version: 1.0.0
+- Author: Vuk Stojkovic & Traversy Media
