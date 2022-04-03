@@ -1,7 +1,7 @@
 # DevStore API
 
-> Backend API for Bootcamp stores.
-
+> Backend API for Development Store. It comprises bootcamps along with their courses, users and reviews. The CRUD functionalities are provided for all resources, along with a hashed passwords and cookies for users authentication. API is secured against nosql injection, cros-site-scriptinga and multiple requests.
+> 
 ## Usage
 
 Remvove one .env exstension from "config/config.env.env" and set the values.
