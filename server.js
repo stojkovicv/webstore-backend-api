@@ -7,6 +7,12 @@ const fileupload = require('express-fileupload');
 const cookieParser = require('cookie-parser');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/error');
+const mongoSanitize = require('express-mongo-sanitize');
+const helmet = require('helmet');
+const xss = require('xss-clean');
+const rateLimit = require('express-rate-limit');
+const hpp = require('hpp');
+const cors = require('cors');
 
 //Ucitavanje env varijabli iz config.env
 dotenv.config({ path : './config/config.env' });
@@ -37,6 +43,29 @@ if (process.env.NODE_ENV === 'development'){
 
 // Photo uploading
 app.use(fileupload());
+
+// Sanitize
+app.use(mongoSanitize());
+
+// Headers protection
+app.use(helmet());
+
+// Prevent cross site scripting
+app.use(xss());
+
+// Rate limit
+const limiter = rateLimit({
+    windowMs: 10*60*1000,
+    max: 100
+});
+
+app.use(limiter);
+
+// Prevent http param pollution
+app.use(hpp());
+
+// Enable cors
+app.use(cors());
 
 // Static folder
 app.use(express.static(path.join(__dirname, 'public')));
