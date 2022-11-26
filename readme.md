@@ -1,6 +1,6 @@
 # DevStore API
 
-> Backend API for Development Store. It comprises bootcamps along with their courses, users and reviews. The CRUD functionalities are provided for all resources, along with a hashed passwords and cookies for users authentication. API is secured against nosql injection, cros-site-scriptinga and multiple requests.
+> Backend API for purchasing Development courses. It comprises bootcamps along with their courses, users and reviews. The CRUD functionalities are provided for all resources, along with a hashed passwords and cookies for users authentication. API is secured against nosql injection, cros-site-scriptinga and multiple requests.
 > 
 ## Usage
 
