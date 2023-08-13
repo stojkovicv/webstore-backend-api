@@ -1,4 +1,4 @@
-# Online Bootcamps Store API
+# Web Bootcamps Store API
 
 > Backend API for purchasing Development courses. It comprises bootcamps along with their courses, users and reviews. The CRUD functionalities are provided for all resources, along with a hashed passwords and cookies for users authentication. API is secured against nosql injection, cros-site-scriptinga and multiple requests.
 > 
